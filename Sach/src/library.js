@@ -35,7 +35,7 @@ export default function Library ({ navigation, route }) {
   }
 
   const getListProduct = async () => {
-    await fetch("https://645b097765bd868e93293770.mockapi.io/buyed")
+    await fetch("https://6459c36b8badff578e13fe4c.mockapi.io/user/1/buyed")
       .then((Response) => Response.json())
       .then((json) => {
         setListProduct(json);

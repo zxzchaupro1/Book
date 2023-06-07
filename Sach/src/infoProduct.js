@@ -27,7 +27,7 @@ export default function InfoProduct({ navigation, route }) {
   const onSave = (callback) => {
     const newProduct = info.item;
     console.log("Hàm 1 được gọi");
-    fetch("https://645b097765bd868e93293770.mockapi.io/ListBook", {
+    fetch("https://6459c36b8badff578e13fe4c.mockapi.io/user/1/listbook", {
       method: "POST",
       body: JSON.stringify(newProduct),
       headers: {

@@ -36,7 +36,7 @@ export default function Contact({ navigation, route }) {
       >
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('Library');
+            navigation.navigate('Home');
           }}
           style={{ padding: 20 }}
         >

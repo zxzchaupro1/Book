@@ -40,14 +40,14 @@ export default function Search({ navigation }) {
       });
   };
 
-  const searchResult = async (name) => {
+  const searchResult = async (topic) => {
     const newLists = new Array()
     const newList = new Array()
     listCustomer.forEach(element => {
-      if (element.name.includes(name) && name != "") {
-        console.log("==", name);
+      if (element.topic.includes(topic) && topic != "") {
+        console.log("==", topic);
         newLists.push(element)
-      } else if (name == "" && !element.name.includes(name)) {
+      } else if (topic == "" && !element.topic.includes(topic)) {
         newLists(newList)
       }
     })
@@ -87,7 +87,7 @@ export default function Search({ navigation }) {
         >
           <Image
             source={require("../src/asset/back.png")}
-            style={{ width: 20, height: 20 }}
+            style={{ width: 20, height: 20, }}
           />
         </TouchableOpacity>
         <View
@@ -124,7 +124,7 @@ export default function Search({ navigation }) {
         <FlatList
           data={listSearch}
           renderItem={({ item }) => {
-            const partialText = item.name.split(textSearch)
+            const partialText = item.topic.split(textSearch)
             return (
               <View style={{
                 flexDirection: "colum",
@@ -139,6 +139,7 @@ export default function Search({ navigation }) {
                 <TouchableOpacity onPress={() => goToDetail(item)}>
                   <View style={{ flex: 1, flexDirection: 'row' }}>
                     <View style = {{flex:1,marginLeft: 20}}>
+                    <Text>{item.name}</Text>
                       <Text style={{ fontSize: 25, fontWeight: "700" }}>{partialText.map((part, index) => {
                         return (
                           <Text key={index}>

@@ -26,7 +26,7 @@ export default function Cart({ navigation, route}) {
 
 
   const getListProduct = async () => {
-    await fetch("https://645b097765bd868e93293770.mockapi.io/ListBook")
+    await fetch("https://6459c36b8badff578e13fe4c.mockapi.io/user/1/listbook")
       .then((Response) => Response.json())
       .then((json) => {
         setListProduct(json);
@@ -47,7 +47,7 @@ export default function Cart({ navigation, route}) {
 
 
 const postData = async (item) => {
-  const response = await fetch("https://645b097765bd868e93293770.mockapi.io/buyed",{
+  const response = await fetch("https://6459c36b8badff578e13fe4c.mockapi.io/user/1/buyed",{
       method: "POST",
       headers: { "Content-Type": "application/json",},
       Accept: "application/json",
@@ -68,7 +68,7 @@ const postData = async (item) => {
   
 
   const onDeleteAPI = async(deleteID) => {
-    fetch("https://645b097765bd868e93293770.mockapi.io/ListBook/" + deleteID, {
+    fetch("https://6459c36b8badff578e13fe4c.mockapi.io/user/1/listbook/" + deleteID, {
       method: 'DELETE',
     })
     .then(res => {
@@ -101,7 +101,7 @@ const postData = async (item) => {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(item)
     };
-    fetch("https://645b097765bd868e93293770.mockapi.io/ListBook/" + item.id, requestOptions)
+    fetch("https://6459c36b8badff578e13fe4c.mockapi.io/user/1/listbook/" + item.id, requestOptions)
     .then(res => {
       if(res.status == 200) {
         console.log("Update thanh cong id: " , item.id);
